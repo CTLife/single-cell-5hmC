@@ -159,9 +159,9 @@ for ( my $i=0; $i<=$#BAMfiles_g; $i++ ) {
     system( "sleep 3s " );
     system( "sort  $output_g/$temp.1.allRows.txt  | uniq -c  >   $output_g/$temp.2.uniq.txt" );
     system( "sleep 3s " );
-    system( "sed  -i -e  's/^\s\+//g'   $output_g/$temp.2.uniq.txt" );
+    system( "sed  -i -e  's/^\\s\\+//g'   $output_g/$temp.2.uniq.txt" );
     system( "sleep 3s " );
-    system( "sed  -i -e  's/\s\+/\t/g'  $output_g/$temp.2.uniq.txt" );
+    system( "sed  -i -e  's/\\s\\+/\\t/g'  $output_g/$temp.2.uniq.txt" );
     system( "sleep 3s " );
     system( "awk  '\$1 > 10'    $output_g/$temp.2.uniq.txt  >  $output_g/$temp.3A.more-than-10.txt " );
     system( "awk  '\$1 > 1000'  $output_g/$temp.2.uniq.txt  >  $output_g/$temp.3B.more-than-1000.txt " );
